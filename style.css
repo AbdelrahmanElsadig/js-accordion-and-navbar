@@ -173,6 +173,77 @@ nav a:hover, .nav-list a:hover {
     overflow: hidden;
 }
 
+.container-modal {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+}
+
+.modal-btn {
+    font-size: 1rem;
+    background-color: blue;
+    color: white;
+    padding: 0.7rem 2rem;
+    border: calc(1rem /16) solid blue;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 400ms ease-in;
+    margin: 0 auto;
+    text-align: center;
+}
+.modal-btn:hover {
+    color: blue;
+    background-color: white;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    z-index: 100;
+    background-color: lightblue;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    transition: 400ms ease-in-out;;
+}
+
+.modal.active {
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-exit {
+    border: none;
+    background-color: unset;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay.active {
+    pointer-events: all;
+    opacity: 0.5;
+}
+
+
+
+
+
 /* Footer */
 footer {
     margin-top: auto;

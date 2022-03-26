@@ -25,6 +25,29 @@ acc_items.forEach((heading,i) => {
         details.style.maxHeight = details.scrollHeight/16 + 'rem';
         icon.textContent = '-';
     })
-
-
 })
+
+// Modal 
+const close_modal = (modal,modal_exit,overlay) => {
+    overlay.addEventListener('click', function (){
+        modal.classList.toggle('active');
+        overlay.classList.toggle('active');
+    })
+modal_exit.addEventListener('click', function () {
+    modal.classList.toggle('active');
+    overlay.classList.toggle('active');
+})
+}
+
+const open_modal = (modal,modal_exit,overlay) => {
+    let modal_btn = document.querySelector('.modal-btn');
+    modal_btn.addEventListener('click', function (){
+    modal.classList.toggle('active');
+    overlay.classList.toggle('active');
+})
+}
+let modal = document.querySelector('.modal');
+let modal_exit = document.querySelector('.modal-exit');
+let overlay = document.querySelector('.overlay');
+open_modal(modal,modal_exit,overlay);
+close_modal(modal,modal_exit,overlay)
